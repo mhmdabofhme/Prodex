@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Prodex</string>
+    <string name="prodex">برودكس</string>
+    <string name="arabic">العربية</string>
+    <string name="english">English</string>
+    <string name="board1">اختار منتج من متجرك ودك الناس يشوفونه.</string>
+    <string name="board2">استخدم قالب من قوالبنا واصنع معجزات.</string>
+    <string name="board3">انشر منتجك على موقعنا و تطبيقات التواصل الاجتماعي و خلي الناس يعرفونك  أكثر.</string>
+    <string name="title1">حدد منتجك</string>
+    <string name="title2">عدل مقطعك</string>
+    <string name="title3">شارك</string>
+    <string name="start">ابدأ</string>
+    <string name="next">التالي</string>
+    <string name="gallery">الألبوم</string>
+    <string name="camera">الكاميرا</string>
+    <string name="skip"><u>تخطي</u></string>
+    <string name="template_description">اختار قالب تشوفه مناسب لمنتجك.</string>
+    <string name="add_text">إضافة نص؟</string>
+    <string name="add_voice">صوت برودكس؟</string>
+    <string name="enter_text_here">اكتب نص التعليق هنا…</string>
+    <string name="enter_first_text_here">اكتب النص الأول هنا…</string>
+    <string name="second_text">النص الثاني…</string>
+    <string name="third_text">النص الثالث…</string>
+    <string name="text_description">إضافة نص للمقطع يساعد المشاهدين يعرفون عن منتجك أكثر.</string>
+    <string name="voice_description">تقدر تختار برودكس يعلق على مقطعك, انت تعلق او حتى تضيف موسيقى!</string>
+    <string name="prodex_voice">صوت برودكس</string>
+    <string name="add_music_from_library"><u>إضافة موسيقى من المكتبة</u></string>
+    <string name="record">تسجيل</string>
+    <string name="start_recording">ابدأ التسجيل.</string>
+    <string name="just_a_couple_of_steps">بس باقي كم خطوة…!</string>
+    <string name="dealer_description">نحتاج بعض المعلومات عشان نساعد الناس يوصلون لك بشكل أفضل.</string>
+    <string name="product_desc">بعد ما تعرفنا عليك, جاء الوقت الي نتعرف فيه على منتجك أكثر.</string>
+    <string name="name">الإسم:</string>
+    <string name="enter_name">اكتب اسمك هنا</string>
+    <string name="phone_number">رقم الجوال:</string>
+    <string name="enter_phone_number">اكتب رقم الجوال هنا</string>
+    <string name="email">الإيميل:</string>
+    <string name="enter_email">اكتب ايميلك هنا</string>
+    <string name="country">البلد:</string>
+    <string name="enter_country">اكتب بلدك هنا</string>
+    <string name="about_your_product">عرفنا على منتجك…</string>
+    <string name="product_category">نوع المنتج:</string>
+    <string name="category">النوع</string>
+    <string name="select_from_here">اختار من هنا</string>
+    <string name="subcategory">النوع الفرعي</string>
+    <string name="describe_you_product">اوصف منتجك:</string>
+    <string name="description">الوصف…</string>
+    <string name="describe_description">الوصف المصاحب لمنشور المنتج في موقعنا.</string>
+    <string name="additional_description">الوصف المصاحب لمنشورات التواصل الاجتماعي.</string>
+
+    <string name="product_name">اسم المنتج:</string>
+    <string name="enter_product_name">اكتب اسم منتجك</string>
+
+    <string name="product_link">رابط المنتج:</string>
+    <string name="enter_product_link">رابط منتجك</string>
+
+    <string name="reach">كيف نوصلك؟</string>
+    <string name="enter_reach">اكتب رقم الجوال او الإيميل</string>
+
+    <string name="additional">نص إضافي:</string>
+    <string name="enter_text">اكتب هنا</string>
+    <string name="here_s_the_final_prodex">البرودكس النهائي!</string>
+    <string name="post">شارك!</string>
+    <string name="find_the_best_lego">دور على أفضل ليقو ست, موجود على متجر ليقو!</string>
+    <string name="only_one_step_left">باقي خطوة أخيرة!</string>
+    <string name="payment_description">تقدر دايمَا تختار دفع إضافي عشان يوصل منتجك ناس أكثر!</string>
+
+    <string name="target_age">الفئة العمرية المستهدفة:</string>
+    <string name="target_place">المنطقة المستهدفة:</string>
+    <string name="pay_with">Pay with</string>
+    <string name="total">المجموع:</string>
+    <string name="older">44 أو أكبر</string>
+    <string name="time_to_glow_up">خلصنا!</string>
+    <string name="get_ready">خلك جاهز, الطلبات بالطريق!</string>
+    <string name="one_moment">لحظات بس…</string>
+    <string name="snackbar">فيه بعض الأشياء ناقصه!</string>
+
+    <string name="fashion">الأزياء</string>
+    <string name="cooking">الطهي</string>
+    <string name="cars">السيارات</string>
+    <string name="electronics">الإلكترونيات</string>
+    <string name="home_and_living">المنزل والمعيشة</string>
+    <string name="beauty_and_personal_care">الجمال والعناية الشخصية</string>
+    <string name="sports_and_fitness">الرياضة واللياقة البدنية</string>
+    <string name="books_and_stationery">الكتب والقرطاسية</string>
+    <string name="health_and_wellness">الصحة</string>
+    <string name="toys_and_games">الألعاب</string>
+
+    <string-array name="product_types">
+        <item>Fashion</item>
+        <item>Cooking</item>
+        <item>Cars</item>
+        <item>Electronics</item>
+        <item>Home and Living</item>
+        <item>Beauty and Personal Care</item>
+        <item>Sports and Fitness</item>
+        <item>Books and Stationery</item>
+        <item>Health and Wellness</item>
+        <item>Toys and Games</item>
+    </string-array>
+
+    <string-array name="target_age">
+        <item>12-17</item>
+        <item>18-24</item>
+        <item>25-34</item>
+        <item>35-44</item>
+        <item>44 أو أكبر</item>
+    </string-array>
+
+</resources>

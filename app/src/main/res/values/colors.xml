@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#0A0C14</color>
+    <color name="accent">#21283F</color>
+    <color name="blue">#4870FF</color>
+    <color name="secondary">#99EBEBF5</color>
+    <color name="teal">#12D9E3</color>
+    <color name="teal75">#BF12D9E3</color>
+    <color name="radio_sec">#D9D9D9</color>
+    <color name="payment">#040301</color>
+
+</resources>

@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Prodex" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/primary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
+        <item name="colorOnSecondary">@color/accent</item>
+        <item name="android:fontFamily">sans-serif</item>
+
+        <item name="colorOnSurface">@color/white</item>
+
+<!--        <item name="android:windowLightStatusBar">true</item>-->
+
+    </style>
+
+    <style name="Theme.Prodex.Radio" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/teal</item>
+        <item name="colorSecondary">@color/radio_sec</item>
+
+
+    </style>
+
+</resources>

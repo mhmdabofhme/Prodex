@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary">
+
+
+    <ImageView
+        android:id="@+id/imgOnBoarding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/share" />
+
+    <ImageView
+        android:id="@+id/imgInstagram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/insta_icon"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toTopOf="@id/imgOnBoarding"
+        app:layout_constraintEnd_toEndOf="@id/imgOnBoarding"
+        app:layout_constraintStart_toStartOf="@id/imgOnBoarding" />
+
+
+    <ImageView
+        android:id="@+id/imgTwitter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:src="@drawable/twitter_icon"
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toTopOf="@id/imgOnBoarding"
+        app:layout_constraintStart_toEndOf="@+id/imgOnBoarding"
+        app:layout_constraintTop_toTopOf="@+id/imgOnBoarding" />
+
+    <ImageView
+        android:id="@+id/imgTiktok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-5dp"
+        android:src="@drawable/tiktok_icon"
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="@+id/imgOnBoarding"
+        app:layout_constraintStart_toEndOf="@+id/imgOnBoarding" />
+
+
+    <ImageView
+        android:id="@+id/imgSnapchat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:visibility="gone"
+        android:layout_marginTop="14dp"
+        android:src="@drawable/snap_icon"
+        app:layout_constraintEnd_toStartOf="@+id/imgOnBoarding"
+        app:layout_constraintTop_toTopOf="@+id/imgOnBoarding" />
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:letterSpacing="0.04"
+        android:text="@string/title1"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgOnBoarding" />
+
+    <TextView
+        android:id="@+id/txtSubTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/board1"
+        android:textColor="@color/secondary"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+</androidx.constraintlayout.widget.ConstraintLayout>
