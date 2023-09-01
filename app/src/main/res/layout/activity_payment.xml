@@ -191,7 +191,7 @@
         android:backgroundTint="@color/white"
         android:gravity="center"
         android:paddingHorizontal="12dp"
-        android:text="$1.99"
+        android:text="$29"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/layoutPayment"

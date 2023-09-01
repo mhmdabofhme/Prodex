@@ -16,17 +16,23 @@ class PaymentActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPaymentBinding
     private val viewModel by viewModels<MainViewModel>()
 
+    private var amount = 29
+    private var total = 29
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPaymentBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.imgBack.setOnClickListener {
             finish()
         }
         viewModel.counter.observe(this) {
             it.let {
+//                count = it
+                total = it + amount
                 binding.txtCount.text = it.toString()
+                binding.txtTotalPayment.text = "$$total"
             }
         }
 
@@ -43,7 +49,7 @@ class PaymentActivity : AppCompatActivity() {
             }
         }
         binding.layoutPayment.setOnClickListener {
-            startActivity(Intent(this,FinishActivity::class.java))
+            startActivity(Intent(this, FinishActivity::class.java))
         }
 
     }

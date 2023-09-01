@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.example.prodex.R
 import com.example.prodex.databinding.ActivityProductWebDataBinding
+import com.example.prodex.helpers.isPhone
+import com.example.prodex.helpers.isValidEmail
+import com.example.prodex.helpers.showSnackBar
 
 class ProductWebDataActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductWebDataBinding
@@ -33,11 +36,30 @@ class ProductWebDataActivity : AppCompatActivity() {
         binding.spinnerCategory.setItems(list)
 
         binding.btnNext.setOnClickListener {
-            startActivity(Intent(baseContext,ProductDataActivity::class.java))
+//            if (isValid()) {
+                startActivity(Intent(baseContext, ProductDataActivity::class.java))
+//            }
         }
 
 //        val feelings = resources.getStringArray(R.array.product_types)
 //        binding.editSpecies.setAdapter(arrayAdapter)
 
     }
+
+
+    private fun isValid(): Boolean {
+        if (binding.spinnerCategory.text.trim().isEmpty()) {
+            binding.root.showSnackBar()
+            return false
+        } else if (binding.editSubCategory.text.trim().isEmpty()) {
+            binding.root.showSnackBar()
+            return false
+        } else if (binding.editDescription.text.trim().isEmpty()) {
+            binding.root.showSnackBar()
+            return false
+        } else {
+            return true
+        }
+    }
+
 }

@@ -12,10 +12,20 @@ class MainViewModel : ViewModel {
     }
     val counter: LiveData<Int> = _counter
 
-    fun plus(){
+//    private val _total = MutableLiveData<Int>().apply {
+//        value = _amount.value?.toInt()?.plus(_counter.value?.toInt()!!)
+//    }
+//    val total: LiveData<Int> = _total
+
+    private val _amount = MutableLiveData<Int>().apply {
+        value = 29
+    }
+
+    fun plus() {
         _counter.value = _counter.value?.toInt()?.plus(10)
     }
-    fun minus(){
+
+    fun minus() {
         _counter.value = _counter.value?.toInt()?.minus(10)
     }
 

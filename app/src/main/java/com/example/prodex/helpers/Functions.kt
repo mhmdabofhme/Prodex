@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.telephony.PhoneNumberUtils
 import android.view.Gravity
 import android.view.View
+import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -24,9 +26,10 @@ fun Context.initProgress(): KProgressHUD {
         .setDimAmount(0.5f)
 }
 
-fun View.showSnackBar(){
+fun View.showSnackBar(message: String = context.getString(R.string.snackbar)) {
 //    Snackbar.make(this, "There are some information missing!", Snackbar.LENGTH_LONG).show()
-    val snack: Snackbar = Snackbar.make(this, context.getString(R.string.snackbar), Snackbar.LENGTH_LONG)
+    val snack: Snackbar =
+        Snackbar.make(this, message, Snackbar.LENGTH_LONG)
     val view = snack.view
     val params = view.layoutParams as FrameLayout.LayoutParams
     params.gravity = Gravity.TOP
@@ -66,11 +69,11 @@ fun Activity.changeLanguage(isActivity: Boolean) {
     }
 }
 
-fun Activity.getTargetAge():ArrayList<String>{
+fun Activity.getTargetAge(): ArrayList<String> {
     return arrayListOf<String>("12-17", "18-24", "25-34", "35-44", this.getString(R.string.older))
 }
 
-fun Activity.getCountries():ArrayList<String>{
+fun Activity.getCountries(): ArrayList<String> {
     return arrayListOf<String>(
         "Afghanistan",
         "Albania",
@@ -273,60 +276,18 @@ fun Activity.getCountries():ArrayList<String>{
 }
 
 
-//fun String.isValidEmail(): Boolean {
-//    val regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$".toRegex()
-//    return this.matches(regex)
-//}
-//
-//
-//fun String.isPassword(): Boolean {
-//    return this.length >= 6
-//}
-//
-//
-//fun Activity.getRandomColor(): Int {
-//
-//    val colorArray = arrayOf(
-//        R.color.pink,
-//        R.color.purple,
-//        R.color.teal,
-//        R.color.orange,
-//    )
-//    val randomIndex = (colorArray.indices).random()
-//    val colorResource = colorArray[randomIndex]
-//    return getColor(colorResource)
-//}
-//
-//fun getStringDate(date: Date?): String? {
-//    val sdf = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
-//    return sdf.format(date)
-//}
-//
-//fun timestampToDate(timestamp: Long?): Date? {
-//    val calendar = Calendar.getInstance()
-//    calendar.timeInMillis = timestamp!!
-//    return calendar.time
-//}
-//
-//@SuppressLint("SimpleDateFormat")
-//fun findDifference(start_date: String?, end_date: String?): Double {
-//    val sdf = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
-//    val d1 = sdf.parse(start_date)
-//    val d2 = sdf.parse(end_date)
-//    val differenceInTime = d2.time - d1.time
-//    val diffInSec = TimeUnit.MILLISECONDS.toSeconds(differenceInTime)
-//    // convert from Seconds to Minutes
-//    return diffInSec.toDouble() / 60
-//}
-//
-//fun checkTime(task: Task): Double {
-//    val timeString = task.time
-//    val format = SimpleDateFormat("hh:mm a", Locale.ENGLISH)
-//    val date = format.parse(timeString)
-//
-//    val currentDate =
-//        getStringDate(timestampToDate(System.currentTimeMillis()))
-//    val taskDate =
-//        getStringDate(date)
-//    return findDifference(currentDate, taskDate)
-//}
+fun String.isValidEmail(): Boolean {
+    val regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$".toRegex()
+    return this.matches(regex)
+}
+fun EditText.isPhone(): Boolean {
+    var isPhone = true
+    val number = this.text.toString()
+    if ((number.length < 10) or (number.length > 13)) {
+        isPhone = false
+    }
+    if (!PhoneNumberUtils.isGlobalPhoneNumber(number)) {
+        isPhone = false
+    }
+    return isPhone
+}

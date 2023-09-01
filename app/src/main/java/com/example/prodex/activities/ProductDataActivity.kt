@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.prodex.R
 import com.example.prodex.databinding.ActivityProductDataBinding
+import com.example.prodex.helpers.isPhone
+import com.example.prodex.helpers.isValidEmail
+import com.example.prodex.helpers.showSnackBar
 
 class ProductDataActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProductDataBinding
@@ -18,8 +21,30 @@ class ProductDataActivity : AppCompatActivity() {
         }
 
         binding.btnNext.setOnClickListener {
-            startActivity(Intent(baseContext,ReviewActivity::class.java))
+//            if (isValid()) {
+                startActivity(Intent(baseContext, ReviewActivity::class.java))
+//            }
         }
 
     }
+
+
+    private fun isValid(): Boolean {
+        if (binding.editProductName.text.trim().isEmpty()) {
+            binding.root.showSnackBar()
+            return false
+        } else if (binding.editReach.text.trim().isEmpty()) {
+            binding.root.showSnackBar()
+            return false
+        } else if (binding.editProductLink.text.trim().isEmpty()) {
+            binding.root.showSnackBar()
+            return false
+        } else if (binding.editAdditionalText.text.trim().isEmpty()) {
+            binding.root.showSnackBar()
+            return false
+        } else {
+            return true
+        }
+    }
+
 }

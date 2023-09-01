@@ -19,6 +19,9 @@ class OptionsActivity : AppCompatActivity() {
         binding.txtCamera.setOnClickListener {
             startActivity(Intent(baseContext,CameraTemplatesActivity::class.java))
         }
+binding.txtSkip.setOnClickListener {
+            startActivity(Intent(baseContext,DealerDataActivity::class.java))
+        }
 
     }
 }

@@ -121,7 +121,6 @@
         android:layout_marginHorizontal="32dp"
         android:background="@drawable/shape_edit_text"
         android:hint="@string/enter_reach"
-        android:inputType="textEmailAddress|number"
         android:paddingHorizontal="12dp"
         android:textColor="@color/white"
         android:textColorHint="@color/secondary"
