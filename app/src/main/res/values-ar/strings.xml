@@ -86,9 +86,10 @@
     <string name="books_and_stationery">الكتب والقرطاسية</string>
     <string name="health_and_wellness">الصحة</string>
     <string name="toys_and_games">الألعاب</string>
-    <string name="text_for_first_10_seconds">النص لأول 10 ثوانٍ</string>
-    <string name="text_for_10_to_20_seconds">النص لمدة 10 إلى 20 ثانية</string>
-    <string name="text_for_20_to_30_seconds">النص لمدة 20 إلى 30 ثانية</string>
+    <string name="text_for_first_10_seconds">أضف النص لأول 10 ثواني…</string>
+    <string name="text_for_10_to_20_seconds">20 ثانية التالية…</string>
+    <string name="text_for_20_to_30_seconds">30 ثانية الأخيرة…</string>
+    <string name="add_voice_from_gallery"><u>إضافة صوت من الألبوم</u></string>
 
     <string name="or_skip_some_steps_and_add_a_video_without_edits"><u>أو تخطي بعض الخطوات وأضف مقطع فيديو بدون تعديلات</u></string>
 

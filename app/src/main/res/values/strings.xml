@@ -85,9 +85,10 @@
     <string name="health_and_wellness">Health and Wellness</string>
     <string name="toys_and_games">Toys and Games</string>
     <string name="or_skip_some_steps_and_add_a_video_without_edits"><u>Or skip some steps and add a video without edits</u></string>
-    <string name="text_for_first_10_seconds">Text for first 10 seconds</string>
-    <string name="text_for_10_to_20_seconds">Text for 10 to 20 seconds</string>
-    <string name="text_for_20_to_30_seconds">Text for 20 to 30 seconds</string>
+    <string name="text_for_first_10_seconds">Add text for the first 10 sec…</string>
+    <string name="text_for_10_to_20_seconds">Next 20 sec…</string>
+    <string name="text_for_20_to_30_seconds">Last 30 sec…</string>
+    <string name="add_voice_from_gallery"><u>Add voice from gallery</u></string>
 
 
     <string-array name="product_types">

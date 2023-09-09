@@ -19,6 +19,57 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <ImageView
+        android:id="@+id/imgVideo"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgVideo"
+        app:layout_constraintEnd_toEndOf="@id/imgVideo"
+        app:layout_constraintStart_toStartOf="@+id/imgVideo"
+        app:layout_constraintTop_toTopOf="@+id/imgVideo">
+
+        <ImageView
+            android:id="@+id/music1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/music1"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/music2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/music2"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/music1"
+            app:layout_constraintLeft_toLeftOf="@+id/music1" />
+
+        <ImageView
+            android:id="@+id/music3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/music3"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/music1"
+            app:layout_constraintRight_toRightOf="@+id/music1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -27,7 +78,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnNext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBack">
+        app:layout_constraintTop_toBottomOf="@+id/imgVideo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -58,8 +109,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
             android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="11dp"
             android:text="@string/voice_description"
             android:textColor="@color/secondary"
             android:textSize="12sp" />
@@ -69,20 +120,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="11dp"
-            android:padding="15dp"
-            android:visibility="gone"
             android:background="@drawable/shape_edit_text"
             android:hint="@string/enter_text_here"
+            android:padding="15dp"
             android:paddingHorizontal="12dp"
             android:textColor="@color/white"
             android:textColorHint="@color/secondary"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:visibility="gone" />
 
         <RadioGroup
             android:id="@+id/radioGroupVoice"
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             android:theme="@style/Theme.Prodex.Radio">
 
@@ -100,25 +151,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/white"
-                android:textSize="15sp"
                 android:text="@string/record"
                 android:textColor="@color/white"
+                android:textSize="15sp"
+                android:visibility="gone"
                 app:buttonTint="@color/radio_sec" />
         </RadioGroup>
 
         <TextView
-            android:id="@+id/txtMusic"
-            android:paddingHorizontal="5dp"
-            android:gravity="center"
+            android:id="@+id/txtRecord"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:drawablePadding="7dp"
-            android:text="@string/add_music_from_library"
+            android:gravity="center"
+            android:paddingHorizontal="5dp"
+            android:text="@string/add_voice_from_gallery"
             android:textColor="@color/secondary"
             android:textSize="12sp"
+            android:visibility="visible"
             app:drawableStartCompat="@drawable/ic_music" />
-
-
 
 
     </LinearLayout>

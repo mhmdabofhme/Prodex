@@ -7,8 +7,11 @@ import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.example.prodex.R
 import com.example.prodex.databinding.ActivityProdexVoiceBinding
@@ -27,6 +30,32 @@ class ProdexVoiceActivity : AppCompatActivity() {
         binding.imgBack.setOnClickListener {
             finish()
         }
+
+
+        val animation = AnimationUtils.loadAnimation(this, R.anim.slide_in_right)
+        binding.imgVideo.startAnimation(animation)
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.music1.visibility = View.VISIBLE
+            val anim = AnimationUtils.loadAnimation(this, R.anim.slide_in_right_short)
+            binding.music1.startAnimation(anim)
+        }, 1000)
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.music2.visibility = View.VISIBLE
+            val anim = AnimationUtils.loadAnimation(this, R.anim.slide_in_right_short)
+            binding.music2.startAnimation(anim)
+        }, 1500)
+
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.music3.visibility = View.VISIBLE
+            val anim = AnimationUtils.loadAnimation(this, R.anim.slide_in_right_short)
+            binding.music3.startAnimation(anim)
+        }, 2000)
+
+
+
 
         binding.radioGroupVoice.setOnCheckedChangeListener { group, checkedId ->
             choice = checkedId

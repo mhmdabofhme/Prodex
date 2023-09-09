@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
+import android.view.View
 import android.view.animation.AnimationUtils
 import com.example.prodex.R
 import com.example.prodex.databinding.ActivitySplashScreenBinding
@@ -18,9 +20,11 @@ class SplashScreen : AppCompatActivity() {
         val animation = AnimationUtils.loadAnimation(this, R.anim.scale)
         binding.imgLogo.startAnimation(animation)
 
-        Handler().postDelayed({
+
+        Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, LanguageActivity::class.java))
             finishAffinity()
         }, 2000)
+
     }
 }
