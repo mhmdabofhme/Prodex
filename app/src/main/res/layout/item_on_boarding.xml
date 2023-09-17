@@ -21,13 +21,11 @@
         android:id="@+id/imgInstagram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="-10dp"
+        android:layout_marginBottom="67dp"
         android:src="@drawable/insta_icon"
-        android:layout_marginEnd="10dp"
         android:visibility="gone"
-
         app:layout_constraintBottom_toTopOf="@id/imgOnBoarding"
-        app:layout_constraintEnd_toEndOf="@id/imgOnBoarding"
         app:layout_constraintStart_toStartOf="@id/imgOnBoarding" />
 
 
@@ -38,7 +36,6 @@
         android:layout_marginStart="32dp"
         android:src="@drawable/twitter_icon"
         android:visibility="gone"
-
         app:layout_constraintBottom_toTopOf="@id/imgOnBoarding"
         app:layout_constraintStart_toEndOf="@+id/imgOnBoarding"
         app:layout_constraintTop_toTopOf="@+id/imgOnBoarding" />
@@ -47,10 +44,10 @@
         android:id="@+id/imgTiktok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
         android:src="@drawable/tiktok_icon"
         android:visibility="gone"
-
         app:layout_constraintBottom_toBottomOf="@+id/imgOnBoarding"
         app:layout_constraintStart_toEndOf="@+id/imgOnBoarding" />
 
@@ -59,12 +56,38 @@
         android:id="@+id/imgSnapchat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="14dp"
-        android:visibility="gone"
         android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
         android:src="@drawable/snap_icon"
+        android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/imgOnBoarding"
         app:layout_constraintTop_toTopOf="@+id/imgOnBoarding" />
+
+
+    <ImageView
+        android:id="@+id/imgLinkedin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/linkedin"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/imgOnBoarding"
+        app:layout_constraintEnd_toEndOf="@+id/imgOnBoarding"
+        app:layout_constraintStart_toStartOf="@+id/imgOnBoarding" />
+
+
+    <ImageView
+        android:id="@+id/imgYoutube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="-10dp"
+        android:layout_marginBottom="58dp"
+        android:src="@drawable/youtube"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/imgOnBoarding"
+        app:layout_constraintEnd_toEndOf="@id/imgOnBoarding" />
+
 
     <TextView
         android:id="@+id/txtTitle"

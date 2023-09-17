@@ -25,6 +25,8 @@ class ViewPagerAdapter(
     lateinit var imgTwitter: ImageView
     lateinit var imgTiktok: ImageView
     lateinit var imgSnapchat: ImageView
+    lateinit var imgLinkedin: ImageView
+    lateinit var imgYoutube: ImageView
 
 
     class ImageViewHolder(view: ItemOnBoardingBinding) :
@@ -47,6 +49,8 @@ class ViewPagerAdapter(
         imgTwitter = holder.binding.imgTwitter
         imgTiktok = holder.binding.imgTiktok
         imgSnapchat = holder.binding.imgSnapchat
+        imgLinkedin = holder.binding.imgLinkedin
+        imgYoutube = holder.binding.imgYoutube
 //        if (position!=imageList.size-1){
 //            showSocialMedia(holder.binding,false, activity)
 //        }else{
@@ -70,16 +74,22 @@ class ViewPagerAdapter(
             imgTwitter.visibility = View.VISIBLE
             imgSnapchat.visibility = View.VISIBLE
             imgTiktok.visibility = View.VISIBLE
+            imgLinkedin.visibility = View.VISIBLE
+            imgYoutube.visibility = View.VISIBLE
             val animation = AnimationUtils.loadAnimation(activity, R.anim.scale)
             imgInstagram.startAnimation(animation)
             imgTwitter.startAnimation(animation)
             imgSnapchat.startAnimation(animation)
             imgTiktok.startAnimation(animation)
+            imgLinkedin.startAnimation(animation)
+            imgYoutube.startAnimation(animation)
         } else {
             imgInstagram.visibility = View.GONE
             imgTwitter.visibility = View.GONE
             imgSnapchat.visibility = View.GONE
             imgTiktok.visibility = View.GONE
+            imgLinkedin.visibility = View.GONE
+            imgYoutube.visibility = View.GONE
         }
     }
 
