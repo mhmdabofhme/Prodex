@@ -310,5 +310,32 @@
         <item>Zambia</item>
         <item>Zimbabwe</item>
     </string-array>
+    <string-array name="Styl">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Swift</item>
+        <item>Python</item>
+        <item>Scala</item>
+        <item>Perl</item>
+    </string-array>
+
+    <string-array name="color">
+        <item>black</item>
+        <item>white</item>
+        <item>primary</item>
+        <item>accent</item>
+        <item>redcolor</item>
+        <item>seekbar_color</item>
+    </string-array>
+
+
+    <string-array name="background">
+        <item>black</item>
+        <item>white</item>
+        <item>primary</item>
+        <item>accent</item>
+        <item>redcolor</item>
+        <item>seekbar_color</item>
+    </string-array>
 
 </resources>

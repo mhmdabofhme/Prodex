@@ -20,9 +20,12 @@ class CameraTemplatesActivity : AppCompatActivity() {
         }
 
         binding.recTemplates.adapter = GalleryTemplatesAdapter(this)
-
         binding.btnNext.setOnClickListener {
+
+
             startActivity(Intent(baseContext,TextActivity::class.java))
+
+
         }
 
     }

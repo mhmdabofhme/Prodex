@@ -2,13 +2,16 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id ("kotlin-parcelize")
 
 }
 
 android {
     namespace 'com.example.prodex'
     compileSdk 33
-
+    dataBinding {
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.example.prodex"
         minSdk 26
@@ -79,4 +82,23 @@ dependencies {
 
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+
+
+
+    /////
+    implementation 'com.github.abuanzeh:CustomConfirmDialog:1.0.2'
+
+    implementation("com.arthenica:mobile-ffmpeg-full:4.4")
+    implementation("org.florescu.android.rangeseekbar:rangeseekbar-library:0.3.0")
+
+    implementation ("com.github.HeyAlex:BottomDrawer:v1.0.0")
+    implementation ("com.github.certified84:CustomProgressIndicator:1.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation 'com.google.code.gson:gson:2.9.1'
+
+
+
+
+
+    //
 }

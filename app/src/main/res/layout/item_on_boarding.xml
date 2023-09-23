@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="20dp"
-        android:src="@drawable/linkedin"
+        android:src="@drawable/google"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/imgOnBoarding"
         app:layout_constraintEnd_toEndOf="@+id/imgOnBoarding"
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="-10dp"
         android:layout_marginBottom="58dp"
-        android:src="@drawable/youtube"
+        android:src="@drawable/box"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/imgOnBoarding"
         app:layout_constraintEnd_toEndOf="@id/imgOnBoarding" />
