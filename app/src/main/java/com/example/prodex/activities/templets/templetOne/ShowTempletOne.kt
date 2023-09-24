@@ -178,15 +178,15 @@ class ShowTempletOne : AppCompatActivity() {
             textView.get(0).setTextColor(Color.RED)
             for(i in 1..textView.size-1)
             {
-                if(i%2==0) {
-                    image.animate().rotationBy(-1f).setDuration(1000).translationX(-1f).translationY(-1f)
-                        .setInterpolator(AccelerateDecelerateInterpolator()).start()
-                }
-                else
-                {
-                    image.animate().rotationBy(1f).setDuration(1000).translationX(1f).translationY(1f)
-                        .setInterpolator(AccelerateDecelerateInterpolator()).start()
-                }
+//                if(i%2==0) {
+//                    image.animate().rotationBy(-1f).setDuration(1000).translationX(-1f).translationY(-1f)
+//                        .setInterpolator(AccelerateDecelerateInterpolator()).start()
+//                }
+//                else
+//                {
+//                    image.animate().rotationBy(1f).setDuration(1000).translationX(1f).translationY(1f)
+//                        .setInterpolator(AccelerateDecelerateInterpolator()).start()
+//                }
                 textView.get(i).setTextColor(Color.RED)
                 textView.get(i-1).setTextColor(Color.BLACK)
 

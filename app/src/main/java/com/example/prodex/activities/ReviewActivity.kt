@@ -1,5 +1,6 @@
 package com.example.prodex.activities
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,9 +11,6 @@ import com.example.prodex.R
 import com.example.prodex.activities.templets.CreatVedio
 import com.example.prodex.activities.templets.SharedPreferencesHelper
 import com.example.prodex.databinding.ActivityReviewBinding
-import com.example.prodex.helpers.initProgress
-import com.example.prodex.helpers.showSnackBar
-import com.kaopiz.kprogresshud.KProgressHUD
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -20,6 +18,7 @@ import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import android.net.Uri
 import android.net.Uri.*
+import android.provider.MediaStore
 import android.widget.Toast
 import com.anzeh.customdialog.CustomConfirmDialog
 import com.anzeh.customdialog.utils.ConfirmDialogCallBack
@@ -28,7 +27,6 @@ import com.google.gson.Gson
 
 class ReviewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityReviewBinding
-    private lateinit var progress: KProgressHUD
     lateinit var creatVedio: CreatVedio
 
     // declaring a null variable for MediaController
@@ -38,8 +36,7 @@ class ReviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityReviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        progress = initProgress()
-        binding.root.showSnackBar()
+
         binding.imgBack.setOnClickListener {
             finish()
         }
@@ -78,7 +75,7 @@ class ReviewActivity : AppCompatActivity() {
 
                         val retrievedBitmapList = sharedPreferencesHelper.getBitmapArrayList()
 
-                       creatVedio.convertToVideo(
+                       creatVedio.convertToVideo2(
                             this@ReviewActivity,
                             retrievedBitmapList,
                             retrievedBitmapList,sharedPreferencesHelper.getName() ,sharedPreferencesHelper.getFileAudio(),20)
@@ -89,17 +86,23 @@ class ReviewActivity : AppCompatActivity() {
                                Log.d("TAG", "handleClickConfirmButton: $vedioPath")
 
                                launch(Dispatchers.Main) {
+
                                    binding.indicators.setVisibility(false)
 
                                }
+                               binding.videoView.setVideoPath(   vedioPath?.let { getAudioFilePath(this@ReviewActivity, it) })
+                               binding.videoView.start()
+
+
+                           }
+                           else
+                           {
+
+                               Log.d("TAG", "handleClickConfirmButton: error")
+
                            }
 
                        }
-
-
-
-
-
 
                     }
                     coroutineScope.cancel()
@@ -141,6 +144,19 @@ class ReviewActivity : AppCompatActivity() {
 
 
     }
+    private fun getAudioFilePath(context: Context, uri: String): String? {
+        var filePath: String? = null
+        val projection = arrayOf(MediaStore.Video.Media.DATA)
+        val cursor = context.contentResolver.query(Uri.parse(uri), projection, null, null, null)
+        cursor?.use {
+            if (it.moveToFirst()) {
+                val columnIndex = it.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA)
+                filePath = it.getString(columnIndex)
+            }
+        }
+        return filePath
+    }
+
 }
 
 
