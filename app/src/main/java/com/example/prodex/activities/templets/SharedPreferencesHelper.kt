@@ -4,6 +4,8 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.util.Base64
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.io.ByteArrayOutputStream
 
 class SharedPreferencesHelper
@@ -37,7 +39,10 @@ class SharedPreferencesHelper
 
 
     }
-    fun saveBitmapArrayList(bitmapList: ArrayList<Bitmap>) {
+ fun saveBitmapArrayList(bitmapList: ArrayList<Bitmap>) {
+
+
+
         val encodedBitmapList = ArrayList<String>()
         for (bitmap in bitmapList) {
             val byteArrayOutputStream = ByteArrayOutputStream()
@@ -48,6 +53,7 @@ class SharedPreferencesHelper
         }
         editor.putString("bitmapList", encodedBitmapList.toString())
         editor.apply()
+
     }
 
     fun getBitmapArrayList(): ArrayList<Bitmap> {

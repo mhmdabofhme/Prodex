@@ -67,10 +67,10 @@ class CreatTemplet : AppCompatActivity() {
         binding.creatVideo.setOnClickListener {
 
 
-            listColorBack.add(R.color.white)
-            listColorBack.add(R.color.white)
-            listColorBack.add(R.color.white)
-            listColorBack.add(R.color.white)
+            listColorBack.add(R.color.blue)
+            listColorBack.add(R.color.blue)
+            listColorBack.add(R.color.blue)
+            listColorBack.add(R.color.blue)
 
             listImage.add(R.drawable.therd)
             listImage.add(R.drawable.onetemp)

@@ -78,7 +78,7 @@ class ReviewActivity : AppCompatActivity() {
                        creatVedio.convertToVideo2(
                             this@ReviewActivity,
                             retrievedBitmapList,
-                            retrievedBitmapList,sharedPreferencesHelper.getName() ,sharedPreferencesHelper.getFileAudio(),20)
+                            retrievedBitmapList,sharedPreferencesHelper.getName() ,sharedPreferencesHelper.getFileAudio(),30)
                        {result ,vedioPath ->
 
                            if(result)

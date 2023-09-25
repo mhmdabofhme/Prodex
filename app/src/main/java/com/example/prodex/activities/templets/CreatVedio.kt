@@ -56,7 +56,7 @@ class CreatVedio
 
         val frameRate = 20 // Number of frames per second
 
-        val totalFrames = durationInSeconds * frameRate
+        val totalFrames = 30 * frameRate
         val framesPerImage = totalFrames / bitmapList.size
 
 
@@ -104,13 +104,14 @@ class CreatVedio
         if (trimResult == RETURN_CODE_SUCCESS) {
 
 
-            val command = arrayOf(
+            var command = arrayOf(
 
                 "-r", frameRate.toString(),
                 "-i", "${outputDirCap.absolutePath}/frame%d.png",
                 "-i", "${outputDirEff.absolutePath}/frame%d.png",
                 "-i",trimmedAudioFilePath,
                 "-filter_complex", "[0:v][1:v]overlay",
+              //  "-vf", "select='eq(n,$lastFrameIndex)':n=1, setpts=N/FRAME_RATE/TB+$adjustedDuration/TB",
                 "-c:a", "libmp3lame",
                 "-y",
                 outputFilePath
@@ -214,126 +215,6 @@ class CreatVedio
         }
         return filePath
     }
-
-
-
-    suspend fun convertToVideo(
-        context: Context,
-        bitmapList: List<Bitmap?>,
-        effectedBitmaps: List<Bitmap?>,
-        nameFile: String,
-        musicFilePath: String,
-        durationInSeconds:Int,
-        executed: (Boolean, String?) -> Unit
-    )  {
-        val outputDirCap = File(context.cacheDir, "temp_cap")
-        val outputDirEff = File(context.cacheDir, "temp_effect")
-
-        outputDirCap.mkdirs()
-        outputDirEff.mkdirs()
-
-        val outputFilePath = File(context.cacheDir, "output.mp4").absolutePath
-        val file = File(outputFilePath)
-        file.delete()
-
-        Log.d("TAG", "convertToVideo: $outputFilePath")
-
-
-        val frameRate = 20 // Number of frames per second
-
-        val totalFrames = durationInSeconds * frameRate
-        val framesPerImage = totalFrames / bitmapList.size
-
-
-        val mediaMetadataRetriever = MediaMetadataRetriever()
-        mediaMetadataRetriever.setDataSource(getAudioFilePath(context,musicFilePath))
-        val audioDuration = mediaMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)?.toLong()
-        mediaMetadataRetriever.release()
-
-        val duration = audioDuration?.div(1000)?.toInt() ?: 0 // Duration of the audio file in seconds
-
-        // Adjust the duration to match the desired durationInSeconds for the video
-        val adjustedDuration = min(duration, durationInSeconds)
-
-        // Trim the audio file using FFmpeg
-
-        val trimmedAudioFilePath = File(context.cacheDir, "trimmed_audio.mp3").absolutePath
-
-
-
-
-        runBlocking {
-
-            launch(Dispatchers.Default) {
-                generateFrames(bitmapList, outputDirCap, totalFrames, framesPerImage)
-            }
-
-            launch(Dispatchers.Default) {
-                generateFrames(effectedBitmaps, outputDirEff, totalFrames, framesPerImage)
-            }
-        }
-
-
-
-        val trimCommand = arrayOf(
-            "-i", getAudioFilePath(context,musicFilePath),
-            "-ss", "0",
-            "-t", adjustedDuration.toString(),
-            "-c", "copy",
-            "-y", trimmedAudioFilePath
-        )
-
-
-
-        val trimResult = FFmpeg.execute(trimCommand)
-        if (trimResult == RETURN_CODE_SUCCESS) {
-
-
-            val command = arrayOf(
-
-                "-r", frameRate.toString(),
-                "-i", "${outputDirCap.absolutePath}/frame%d.png",
-                "-i", "${outputDirEff.absolutePath}/frame%d.png",
-                "-i",trimmedAudioFilePath,
-                "-filter_complex", "[0:v][1:v]overlay",
-                "-c:a", "libmp3lame",
-                "-y",
-                outputFilePath
-
-            )
-
-
-            Log.d("TAG", "convertToVideo: $outputFilePath")
-
-
-            try {
-                val returnCode = FFmpeg.execute(command)
-                Config.enableLogCallback { message -> Log.d("FFmpeg", message.toString()) }
-                if (returnCode == RETURN_CODE_SUCCESS) {
-                    Log.d("TAG", "Command execution completed successfully.")
-                    outputDirCap.deleteRecursively()
-                    outputDirEff.deleteRecursively()
-                    executed(true, outputFilePath)
-                    saveVideoToStorage(context, outputFilePath)
-
-                } else if (returnCode == RETURN_CODE_CANCEL) {
-                    Log.d("TAG", "Command execution cancelled by user.")
-                    outputDirCap.deleteRecursively()
-                    outputDirEff.deleteRecursively()
-                    executed(false, " execution cancelled by user")
-                } else {
-                    Log.d("TAG", "Command execution failed with returnCode=$returnCode.")
-                    outputDirCap.deleteRecursively()
-                    outputDirEff.deleteRecursively()
-                    executed(false, "Command execution failed with returnCode=$returnCode.")
-                }
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
-    }
-
-
 
     private fun generateFrames(bitmapList: List<Bitmap?>, outputDir: File, totalFrames: Int, framesPerImage: Int) {
         var frameCount = 0

@@ -10,8 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/backGroundColor"
-        android:backgroundTint="@color/white"
-        android:background="@color/white"
+        android:background="#0E1F80"
         >
 
         <TextView
@@ -26,7 +25,7 @@
             android:gravity="center"
             android:textSize="35sp"
             android:ems="2"
-            android:fontFamily="@font/halodomassolidlgrnd"
+            android:fontFamily="@font/onefont"
 
 
 
@@ -44,7 +43,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text1"
 
-            android:fontFamily="@font/halodomassolidlgrnd"
+            android:fontFamily="@font/onefont"
 
             />
 
@@ -54,12 +53,13 @@
             android:layout_height="0dp"
             android:gravity="center"
             android:text="HALLO"
-            android:textSize="35dp"
+
+            android:textSize="@dimen/_25sdp"
+            android:fontFamily="@font/onefont"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text2"
-            android:fontFamily="@font/halodomassolidlgrnd"
 
             />
 
@@ -74,7 +74,7 @@
             app:layout_constraintHeight_percent="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text3"
-            android:fontFamily="@font/halodomassolidlgrnd"
+            android:fontFamily="@font/onefont"
 
             />
 
@@ -90,7 +90,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text4"
 
-            android:fontFamily="@font/halodomassolidlgrnd"
+            android:fontFamily="@font/onefont"
 
             />
 
@@ -105,7 +105,7 @@
             app:layout_constraintHeight_percent="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text5"
-            android:fontFamily="@font/halodomassolidlgrnd"
+            android:fontFamily="@font/onefont"
 
             />
 
@@ -120,7 +120,7 @@
             app:layout_constraintHeight_percent="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text6"
-            android:fontFamily="@font/halodomassolidlgrnd"
+            android:fontFamily="@font/onefont"
             />
 
         <TextView
@@ -134,7 +134,7 @@
             app:layout_constraintHeight_percent="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text7"
-            android:fontFamily="@font/halodomassolidlgrnd"
+            android:fontFamily="@font/onefont"
 
             />
 
@@ -149,7 +149,7 @@
             app:layout_constraintHeight_percent="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text8"
-            android:fontFamily="@font/halodomassolidlgrnd"
+            android:fontFamily="@font/onefont"
 
             />
 
@@ -164,7 +164,7 @@
             app:layout_constraintHeight_percent="0.07"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text9"
-            android:fontFamily="@font/halodomassolidlgrnd"
+            android:fontFamily="@font/onefont"
 
             />
         <ImageView
@@ -174,22 +174,35 @@
             android:src="@drawable/shapecorner"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHeight_percent="0.4" />
-
-
-        <ImageView
-            android:id="@+id/Image_vedio"
+        <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/therd"
-            android:scaleType="fitCenter"
             app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.4"
+            app:layout_constraintHeight_percent="0.35"
             app:layout_constraintHorizontal_bias="0.097"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintWidth_percent="0.6" />
+            app:cardElevation="@dimen/_50sdp"
+            app:cardCornerRadius="@dimen/_15sdp"
+            android:defaultFocusHighlightEnabled="true"
+            android:outlineSpotShadowColor="@color/black"
+            android:outlineAmbientShadowColor="@color/black"
+            app:layout_constraintWidth_percent="0.45">
+            <ImageView
+                android:id="@+id/Image_vedio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/imagthree"
+                android:background="@drawable/rounded_corner_imageview"
+                android:scaleType="centerCrop"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+
 
         <TextView
             android:id="@+id/textView4"
@@ -199,6 +212,7 @@
             android:text="WANNA \n DATE?"
             android:textSize="@dimen/_15sdp"
             android:fontFamily="@font/cairo_bold"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.1"
@@ -220,5 +234,70 @@
         android:elevation="4dp"
         android:visibility="gone"
         />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/finalview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blue"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/ProductLastScreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="SHOP"
+            android:textSize="@dimen/_80sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/yellow"
+            app:layout_constraintVertical_bias="0.173" />
+
+        <TextView
+            android:id="@+id/ProductLastScreentwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top"
+            android:text="NOW"
+            android:textColor="@color/yellow"
+            android:textSize="@dimen/_80sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProductLastScreen"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+
+            android:id="@+id/nameproductLastScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WANA \nDAT?"
+            android:textSize="@dimen/_50sdp"
+            android:gravity="center"
+            android:textColor="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProductLastScreentwo"
+            app:layout_constraintVertical_bias="0.735" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
