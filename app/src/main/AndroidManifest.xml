@@ -20,13 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prodex"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31">
-        <activity
-            android:name=".activities.templets.templetOne.CreatTemplet"
-            android:exported="false" />
-        <activity
-            android:name=".activities.templets.templetOne.ShowTempletOne"
-            android:exported="false" />
+        tools:targetApi="34">
         <activity
             android:name=".activities.FinishActivity"
             android:exported="true"
@@ -41,8 +35,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.SplashScreen"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.ProductWebDataActivity"
             android:exported="true"
@@ -87,20 +87,14 @@
             android:name=".activities.ProductDataActivity"
             android:exported="true"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

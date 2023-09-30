@@ -1,21 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
-    id ("kotlin-parcelize")
 
 }
 
 android {
     namespace 'com.example.prodex'
-    compileSdk 33
-    dataBinding {
-        enabled = true
-    }
+    compileSdk 34
+
     defaultConfig {
         applicationId "com.example.prodex"
         minSdk 26
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -42,7 +38,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -53,7 +49,7 @@ dependencies {
     implementation 'com.tbuonomo:dotsindicator:4.3'
 
     implementation 'com.github.squti:Android-Wave-Recorder:1.7.0'
-    implementation "com.github.skydoves:powerspinner:1.2.4"
+    implementation "com.github.skydoves:powerspinner:1.2.6"
 
     implementation 'com.kaopiz:kprogresshud:1.2.0'
 
@@ -74,27 +70,27 @@ dependencies {
 //    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
 
 //LifeCycle
-    implementation 'androidx.lifecycle:lifecycle-common:2.5.1'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-common:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2"
 
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.3'
 
 
 
     /////
-    implementation 'com.github.abuanzeh:CustomConfirmDialog:1.0.2'
-
-    implementation("com.arthenica:mobile-ffmpeg-full:4.4")
-    implementation("org.florescu.android.rangeseekbar:rangeseekbar-library:0.3.0")
-
-    implementation ("com.github.HeyAlex:BottomDrawer:v1.0.0")
-    implementation ("com.github.certified84:CustomProgressIndicator:1.0")
-    implementation("de.hdodenhof:circleimageview:3.1.0")
-    implementation 'com.google.code.gson:gson:2.9.1'
+//    implementation 'com.github.abuanzeh:CustomConfirmDialog:1.0.2'
+//
+//    implementation("com.arthenica:mobile-ffmpeg-full:4.4")
+//    implementation("org.florescu.android.rangeseekbar:rangeseekbar-library:0.3.0")
+//
+//    implementation ("com.github.HeyAlex:BottomDrawer:v1.0.0")
+//    implementation ("com.github.certified84:CustomProgressIndicator:1.0")
+//    implementation("de.hdodenhof:circleimageview:3.1.0")
+//    implementation 'com.google.code.gson:gson:2.9.1'
 
 
 
