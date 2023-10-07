@@ -5,5 +5,6 @@ import com.example.prodex.R
 
 object Constants {
     const val LANG = "language"
+    const val USER = "USER"
 
 }

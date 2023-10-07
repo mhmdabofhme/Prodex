@@ -2,10 +2,12 @@ package com.example.prodex.adapters
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.prodex.R
+import com.example.prodex.activities.TemplatePreviewActivity
 import com.example.prodex.databinding.CustomTemplateBinding
 import java.util.*
 
@@ -44,8 +46,11 @@ class GalleryTemplatesAdapter(
         with(holder) {
             val data = list[position]
             binding.root.setImageResource(data)
-
+            binding.root.setOnClickListener {
+                activity.startActivity(Intent(activity,TemplatePreviewActivity::class.java))
+            }
         }
+
 
     }
 

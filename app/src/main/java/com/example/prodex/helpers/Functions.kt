@@ -4,6 +4,10 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
+import android.database.Cursor
+import android.graphics.Bitmap
+import android.net.Uri
+import android.provider.MediaStore
 import android.telephony.PhoneNumberUtils
 import android.view.Gravity
 import android.view.View
@@ -14,6 +18,7 @@ import androidx.core.content.ContextCompat
 import com.example.prodex.R
 import com.google.android.material.snackbar.Snackbar
 import com.kaopiz.kprogresshud.KProgressHUD
+import java.io.ByteArrayOutputStream
 import java.util.Locale
 
 
@@ -26,21 +31,20 @@ fun Context.initProgress(): KProgressHUD {
         .setDimAmount(0.5f)
 }
 
-fun View.showSnackBar(message: String = context.getString(R.string.snackbar)) {
-//    Snackbar.make(this, "There are some information missing!", Snackbar.LENGTH_LONG).show()
+fun View.showSnackBar(message: String? = context.getString(R.string.snackbar)) {
+    var snackBarMessage = context.getString(R.string.snackbar)
+    message?.also { snackBarMessage = it }
+
     val snack: Snackbar =
-        Snackbar.make(this, message, Snackbar.LENGTH_LONG)
+        Snackbar.make(this, snackBarMessage, Snackbar.LENGTH_LONG)
     val view = snack.view
     val params = view.layoutParams as FrameLayout.LayoutParams
     params.gravity = Gravity.TOP
     view.layoutParams = params
-//    view.textAlignment = View.TEXT_ALIGNMENT_CENTER;
     snack.setBackgroundTint(ContextCompat.getColor(context, R.color.teal75))
-
     val tv = view.findViewById<View>(com.google.android.material.R.id.snackbar_text) as TextView
     tv.setTextColor(ContextCompat.getColor(context, R.color.white))
     tv.textAlignment = View.TEXT_ALIGNMENT_CENTER
-//    snack.show()
     snack.show()
 }
 
@@ -67,6 +71,27 @@ fun Activity.changeLanguage(isActivity: Boolean) {
         this.startActivity(Intent(this, this.javaClass))
         this.finish()
     }
+}
+
+
+ fun Activity.getImageUri(inImage: Bitmap): Uri? {
+    val bytes = ByteArrayOutputStream()
+    inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+    val path = MediaStore.Images.Media.insertImage(
+        contentResolver,
+        inImage,
+        System.currentTimeMillis().toString(),
+        null
+    )
+    return Uri.parse(path)
+}
+
+ fun Activity.getRealPathFromURI(uri: Uri?): String? {
+    val proj = arrayOf(MediaStore.Images.Media.DATA)
+    val cursor: Cursor? = contentResolver.query(uri!!, proj, null, null, null)
+    cursor!!.moveToFirst()
+    val idx: Int = cursor!!.getColumnIndexOrThrow(MediaStore.Images.ImageColumns.DATA)
+    return cursor.getString(idx)
 }
 
 fun Activity.getTargetAge(): ArrayList<String> {
@@ -280,6 +305,7 @@ fun String.isValidEmail(): Boolean {
     val regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$".toRegex()
     return this.matches(regex)
 }
+
 fun EditText.isPhone(): Boolean {
     var isPhone = true
     val number = this.text.toString()

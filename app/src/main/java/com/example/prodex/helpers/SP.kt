@@ -3,9 +3,9 @@ package com.example.prodex.helpers
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-//import com.example.kidgo.models.Child
-//import com.example.kidgo.models.Parent
-//import com.google.gson.Gson
+import com.google.gson.Gson
+import com.example.prodex.models.user.User
+
 
 class SP(context: Context) {
     private var preferences: SharedPreferences =
@@ -16,13 +16,13 @@ class SP(context: Context) {
         editor.putString(Key, value).apply()
     }
 
-//    fun saveParent(user: Parent?) {
-//        editor.putString(Constants.PARENT, Gson().toJson(user)).apply()
-//    }
-//
-//    fun getParent(): Parent? {
-//        return Gson().fromJson(preferences.getString(Constants.PARENT, "{}"), Parent::class.java)
-//    }
+    fun saveUser(user: User?) {
+        editor.putString(Constants.USER, Gson().toJson(user)).apply()
+    }
+
+    fun getUser(): User? {
+        return Gson().fromJson(preferences.getString(Constants.USER, "{}"), User::class.java)
+    }
 
 //    fun saveChild(user: Child?) {
 //        editor.putString(Constants.CHILD, Gson().toJson(user)).apply()

@@ -18,6 +18,7 @@
     <string name="add_text">Add Text?</string>
     <string name="add_voice">Add PRODEX Voice?</string>
     <string name="enter_text_here">Enter text here…</string>
+    <string name="generate_text">Enter text here to generate voice over using Prodex Voice</string>
     <string name="enter_first_text_here">Enter first text here…</string>
     <string name="second_text">Second text…</string>
     <string name="third_text">Third text…</string>
@@ -89,6 +90,11 @@
     <string name="text_for_10_to_20_seconds">Next 20 sec…</string>
     <string name="text_for_20_to_30_seconds">Last 30 sec…</string>
     <string name="add_voice_from_gallery"><u>Add voice from gallery</u></string>
+    <string name="select_photos">Select photos</string>
+    <string name="permission_image">There is no Permission to get images</string>
+    <string name="save_my_info">Save my info</string>
+    <string name="or">Or</string>
+    <string name="something_went_wrong_updating">Something went wrong while updating.</string>
 
 
     <string-array name="product_types">
