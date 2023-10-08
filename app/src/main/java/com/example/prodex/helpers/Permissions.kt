@@ -2,15 +2,18 @@ package com.example.prodex.helpers
 
 import android.Manifest
 import android.app.Activity
+import android.app.Notification
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.core.app.ActivityCompat
+import java.security.Permission
 
 class Permissions {
     companion object {
         const val permissionCameraId = 101
         const val permissionStorageId = 102
+        const val permissionNotificationId = 99
     }
 
 }
@@ -34,6 +37,31 @@ fun Activity.requestCameraPermissions() {
         ),
         Permissions.permissionCameraId
     )
+}
+
+fun Context.checkNotificationPermissions(): Boolean {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        return ActivityCompat.checkSelfPermission(
+            this,
+            Manifest.permission.POST_NOTIFICATIONS
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+    return false
+}
+
+fun Activity.requestNotificationPermissions() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(
+                Manifest.permission.POST_NOTIFICATIONS
+            ),
+            Permissions.permissionNotificationId
+        )
+    }
+}
+
+fun isNotificationsEnabled(){
 }
 
 fun Context.checkStoragePermissions(): Boolean {

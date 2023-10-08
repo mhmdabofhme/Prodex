@@ -95,6 +95,9 @@
     <string name="save_my_info">Save my info</string>
     <string name="or">Or</string>
     <string name="something_went_wrong_updating">Something went wrong while updating.</string>
+    <string name="notification_permission">You must activate notifications to send you some notifications only when necessary</string>
+    <string name="enable_important_notifications">Enable important notifications</string>
+    <string name="notifications_enabled">Notifications are enabled</string>
 
 
     <string-array name="product_types">

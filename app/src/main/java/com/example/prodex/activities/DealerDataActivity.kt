@@ -38,6 +38,8 @@ class DealerDataActivity : AppCompatActivity() {
         binding.checkboxSaveData.setOnCheckedChangeListener { compoundButton, b ->
             isChecked = b
         }
+
+
     }
 
     private fun isValid(): Boolean {

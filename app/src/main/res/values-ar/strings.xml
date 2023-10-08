@@ -95,6 +95,9 @@
     <string name="save_my_info">احفظ معلوماتي</string>
     <string name="generate_text">أدخل النص هنا لإنشاء تعليق صوتي باستخدام Prodex Voice</string>
     <string name="something_went_wrong_updating">حدث خطأ ما أثناء التحديث.</string>
+    <string name="notification_permission">يجب تفعيل الاشعارات لارسال بعض الاشعارات اليك عند الضرورة فقط.</string>
+    <string name="enable_important_notifications">تفعيل الاشعارات المهمة</string>
+    <string name="notifications_enabled">تم تفعيل الاشعارات</string>
 
 
 
